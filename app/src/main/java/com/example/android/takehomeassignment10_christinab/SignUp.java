@@ -62,7 +62,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         }
 
         if (password.length() < 6) {
-            editTextPassword.setError("Minimum lenght of password should be 6");
+            editTextPassword.setError("Minimum length of password should be 6");
             editTextPassword.requestFocus();
             return;
         }
@@ -75,7 +75,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
                     finish();
-                    startActivity(new Intent(SignUp.this, ProfileActivity.class));
+                    startActivity(new Intent(SignUp.this, Profile.class));
                 } else {
 
                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
